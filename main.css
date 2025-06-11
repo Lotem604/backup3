@@ -1,0 +1,297 @@
+     * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== כותרת ========== */
+        header {
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #ffffff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        /* ========== כפתורים ========== */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2e7d32;
+        }
+
+        .btn-secondary {
+            background-color: #fff;
+            color: #4caf50;
+            border: 2px solid #4caf50;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0fff0;
+        }
+
+        /* ========== תכונות ========== */
+        .features {
+            padding: 80px 0;
+            background-color: #e8f5e9;
+        }
+
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .feature-box {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .feature-box h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #4caf50;
+        }
+
+        /* ========== איך זה עובד ========== */
+        .how-it-works {
+            padding: 80px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: #2e7d32;
+            text-align: center;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        /* ========== עדויות ========== */
+        .testimonials {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+
+        .testimonial-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .testimonial {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #4caf50;
+        }
+
+        /* ==========   קריאה לפעולה (CTA) ========== */
+        .cta {
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        /* ========== תצוגה במסכים קטנים ========== */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .feature-box, .testimonial, .step {
+                min-width: 100%;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .container1 {
+            max-width: 1200px;
+            margin: 2rem auto 2rem;
+            padding: 0 2rem;
+        }
+        
+        .text-bubble {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid #e9ecef;
+        }
+        
+        .text-bubble::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: 50px;
+            border-width: 0 20px 20px;
+            border-style: solid;
+            border-color: transparent transparent #f8f9fa;
+            filter: drop-shadow(0 -4px 5px rgba(0, 0, 0, 0.1));
+        }
+        
+        .text-bubble h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 1rem;
+        }
+        
+        .text-bubble p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .text-bubble p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .hazon-x {
+            width: 2.5%;
+            height: 5%;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .btn-margin {
+            margin-top: 18px;
+        }

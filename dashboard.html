@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>לוח בקרה - יוזמות</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="initiatives.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <div class="dashboard-header">
+        <h1 style="margin-left: 25px">היוזמות שלי</h1>
+        <a href="yozmot.html" class="btn btn-primary">
+          יוזמה חדשה
+          <i class="fas fa-plus"></i>
+        </a>
+      </div>
+
+      <div id="dashboard-content">
+        <div class="initiatives-grid" id="userInitiativesGrid">
+          <!-- Initiatives will be loaded here dynamically -->
+        </div>
+      </div>
+    </main>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="header.js"></script>
+    <script type="module" src="footer.js"></script>
+    <script type="module" src="dashboard.js"></script>
+  </body>
+</html>

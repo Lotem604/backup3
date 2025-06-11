@@ -1,0 +1,98 @@
+/* Make sure the body and html take full height */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Create a flex container for the entire page */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Make the main content area grow to push footer down */
+.container,
+.register-container {
+  flex: 1 0 auto;
+}
+
+/* Footer styles */
+footer {
+  flex-shrink: 0;
+  background-color: #333;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  text-align: right;
+}
+
+.footer-column h3 {
+  color: #81c784;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: white;
+}
+
+.copyright {
+  text-align: center;
+  color: #aaa;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+}

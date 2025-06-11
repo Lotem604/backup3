@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פרטים אישיים - התקווה 8</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="personal_info.css">
+    <link rel="stylesheet" href="footer.css" />
+    <script src="header.js" defer></script>
+    <script src="footer.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <main class="container">
+        <div class="page-header">
+            <a href="dashboard.html" class="back-button">
+                <i class="fas fa-arrow-right"></i>
+                חזרה ללוח הבקרה
+            </a>
+            <h1>פרטים אישיים</h1>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="form-card">
+                <form id="personalInfoForm" class="personal-info-form">
+                    <div class="form-section">
+                        <h2>פרטי חשבון</h2>
+                        <div class="form-group">
+                            <label for="username">שם משתמש</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="username" name="username" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">דואר אלקטרוני</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>פרטים אישיים</h2>
+                        <div class="form-group">
+                            <label for="fullName">שם מלא</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-id-card"></i>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">מספר טלפון</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>הגדרות נוספות</h2>
+                        <div class="form-group">
+                            <label for="language">שפה מועדפת</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-language"></i>
+                                <select id="language" name="language">
+                                    <option value="he">עברית</option>
+                                    <option value="en">English</option>
+                                    <option value="ar">العربية</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="cancel-button">ביטול</button>
+                        <button type="submit" class="save-button">שמור שינויים</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="info-card">
+                <div class="info-section">
+                    <h3><i class="fas fa-info-circle"></i> מידע חשוב</h3>
+                    <ul>
+                        <li>שינוי שם המשתמש יופיע בכל המקומות בהם אתה מופיע במערכת</li>
+                        <li>שינוי כתובת הדואר האלקטרוני יחייב אימות חדש</li>
+                        <li>מספר הטלפון משמש להתראות דחופות</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3><i class="fas fa-shield-alt"></i> אבטחה</h3>
+                    <p>כל המידע שלך מאובטח ומוצפן. אנו לא משתפים את המידע עם גורמים שלישיים.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('personalInfoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically handle the form submission
+            alert('השינויים נשמרו בהצלחה!');
+        });
+
+        document.querySelector('.cancel-button').addEventListener('click', function() {
+            if(confirm('האם אתה בטוח שברצונך לבטל את השינויים?')) {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>

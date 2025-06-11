@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הרשמת ארגון - אהריי</title>
+    <link rel="stylesheet" href="organization-signup.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+    <!-- Custom Scripts -->
+    <script type="module" src="./js/auth.js"></script>
+    <script type="module" src="./js/firebase-config.js"></script>
+    <script type="module" src="./header.js"></script>
+    <script type="module" src="./footer.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>הרשמת ארגון חדש</h1>
+            <form id="organizationSignupForm" class="signup-form">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="orgImage">תמונת הארגון *</label>
+                        <div class="image-upload">
+                            <input type="file" id="orgImage" name="orgImage" accept="image/*" required>
+                            <label for="orgImage" class="upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>גרור תמונה לכאן או לחץ לבחירה</span>
+                            </label>
+                            <div class="image-preview" id="imagePreview"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="orgName">שם הארגון *</label>
+                        <input type="text" id="orgName" name="orgName" required placeholder="הזן את שם הארגון">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="orgType">סוג הארגון *</label>
+                        <select id="orgType" name="orgType" required>
+                            <option value="">בחר סוג ארגון</option>
+                            <option value="nonprofit">ארגון ללא מטרות רווח</option>
+                            <option value="community">ארגון קהילתי</option>
+                            <option value="educational">ארגון חינוכי</option>
+                            <option value="other">אחר</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactName">שם איש קשר *</label>
+                        <input type="text" id="contactName" name="contactName" required placeholder="הזן את שם איש הקשר">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">דוא"ל *</label>
+                        <input type="email" id="contactEmail" name="contactEmail" required placeholder="הזן כתובת דואר"ל">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactPhone">טלפון *</label>
+                        <input type="tel" id="contactPhone" name="contactPhone" required placeholder="הזן מספר טלפון">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="orgDescription">תיאור הארגון *</label>
+                        <textarea id="orgDescription" name="orgDescription" rows="4" required placeholder="ספר על הארגון שלך (עד 500 תווים)" maxlength="500"></textarea>
+                        <div class="char-counter"><span id="charCount">0</span>/500</div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">שלח טופס</button>
+                    <button type="button" class="cancel-btn">ביטול</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="organization-signup.js"></script>
+</body>
+</html> 

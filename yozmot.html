@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>יוזמות - התקווה 8</title>
+    <link rel="stylesheet" href="yozmot.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <!-- Custom Scripts -->
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="header.js"></script>
+    <script type="module" src="footer.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h1>צור יוזמה חדשה</h1>
+
+        <div class="form-progress">
+          <div class="progress-step active" data-step="1">
+            <span class="step-number">1</span>
+            <span class="step-title">פרטים בסיסיים</span>
+          </div>
+          <div class="progress-step" data-step="2">
+            <span class="step-number">2</span>
+            <span class="step-title">משאבים וקטגוריות</span>
+          </div>
+          <div class="progress-step" data-step="3">
+            <span class="step-number">3</span>
+            <span class="step-title">תמונות ופרטי קשר</span>
+          </div>
+        </div>
+
+        <form id="initiativeForm">
+          <!-- Step 1: Basic Details -->
+          <div class="form-step active" data-step="1">
+            <div class="form-section">
+              <div class="form-group">
+                <div>
+                  <label for="initiativeName">שם היוזמה *</label>
+                  <input type="text" id="initiativeName" required placeholder="הזן את שם היוזמה" />
+                </div>
+                <div>
+                  <label for="date">תאריך התחלה *</label>
+                  <input type="date" id="date" required />
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="shortDescription">תיאור קצר *</label>
+                <textarea id="shortDescription" required placeholder="תאר בקצרה את היוזמה (עד 200 תווים)" maxlength="200"></textarea>
+                <div class="char-counter"><span id="charCount">0</span>/200</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Resources and Categories -->
+          <div class="form-step" data-step="2">
+            <div class="form-section">
+              <div class="form-group full-width">
+                <label for="resources">משאבים נדרשים *</label>
+                <textarea id="resources" required placeholder="פרט את המשאבים הנדרשים להקמת הפרויקט"></textarea>
+              </div>
+
+              <div class="form-group full-width">
+                <label>תגיות משאבים *</label>
+                <div class="tags-container">
+                  <div class="tag-options">
+                    <label class="tag-option">
+                      <input type="checkbox" name="resource" value="money" />
+                      <span>כסף</span>
+                    </label>
+                    <label class="tag-option">
+                      <input type="checkbox" name="resource" value="volunteers" />
+                      <span>מתנדבים</span>
+                    </label>
+                    <label class="tag-option">
+                      <input type="checkbox" name="resource" value="equipment" />
+                      <span>ציוד</span>
+                    </label>
+                    <label class="tag-option">
+                      <input type="checkbox" name="resource" value="expertise" />
+                      <span>מומחיות</span>
+                    </label>
+                    <label class="tag-option">
+                      <input type="checkbox" name="resource" value="space" />
+                      <span>מקום</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div>
+                  <label for="status">סטטוס הפרויקט *</label>
+                  <select id="status" required>
+                    <option value="">בחר סטטוס</option>
+                    <option value="idea">רעיון</option>
+                    <option value="planning">בתכנון</option>
+                    <option value="in_progress">בביצוע</option>
+                    <option value="completed">הושלם</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="location">מיקום *</label>
+                  <select id="location" required>
+                    <option value="">בחר מיקום</option>
+                    <option value="north">צפון</option>
+                    <option value="center">מרכז</option>
+                    <option value="south">דרום</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Images and Contact -->
+          <div class="form-step" data-step="3">
+            <div class="form-section">
+              <div class="image-upload">
+                <label for="imageUpload" class="upload-label">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span>גרור תמונות לכאן או לחץ לבחירה</span>
+                  <input type="file" id="imageUpload" multiple accept="image/*" />
+                </label>
+                <div class="image-preview" id="imagePreview"></div>
+              </div>
+
+              <div class="form-group">
+                <div>
+                  <label for="fullName">שם מלא *</label>
+                  <input type="text" id="fullName" required placeholder="הזן את שמך המלא" />
+                </div>
+                <div>
+                  <label for="phone">מספר טלפון *</label>
+                  <input type="tel" id="phone" required placeholder="הזן את מספר הטלפון שלך" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div>
+                  <label for="email">כתובת אימייל *</label>
+                  <input type="email" id="email" required placeholder="הזן את כתובת האימייל שלך" />
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="aboutMe">קצת על עצמך</label>
+                <textarea id="aboutMe" placeholder="ספר לנו קצת על עצמך ועל הרקע שלך (עד 500 תווים)" maxlength="500"></textarea>
+                <div class="char-counter"><span id="aboutMeCharCount">0</span>/500</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="prev-btn" style="display: none;">חזור</button>
+            <button type="button" class="next-btn">המשך</button>
+            <button type="submit" class="submit-btn" style="display: none;">פרסם יוזמה</button>
+            <button type="button" class="cancel-btn">ביטול</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="yozmot.js"></script>
+  </body>
+</html>

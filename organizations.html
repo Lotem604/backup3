@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>חיפוש עמותות</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="organizations.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  </head>
+  <body>
+    <div class="search-container container">
+      <div class="search-header">
+        <h1>חיפוש עמותות/משקיעים</h1>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="הקלד לחיפוש..." />
+          <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+
+      <div class="filters-container">
+        <div class="filter-group">
+          <label>קטגוריה:</label>
+          <select id="categoryFilter">
+            <option value="">כל הקטגוריות</option>
+            <option value="education">חינוך</option>
+            <option value="health">בריאות</option>
+            <option value="environment">סביבה</option>
+            <option value="animals">בעלי חיים</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>מיקום:</label>
+          <select id="locationFilter">
+            <option value="">כל המיקומים</option>
+            <option value="north">צפון</option>
+            <option value="center">מרכז</option>
+            <option value="south">דרום</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>סוג פעילות:</label>
+          <select id="activityFilter">
+            <option value="">כל סוגי הפעילות</option>
+            <option value="volunteer">התנדבות</option>
+            <option value="donation">תרומות</option>
+            <option value="events">אירועים</option>
+            <option value="projects">פרויקטים</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>מיון לפי:</label>
+          <select id="sortFilter">
+            <option value="name">שם</option>
+            <option value="rating">דירוג</option>
+            <option value="newest">חדש ביותר</option>
+            <option value="oldest">ישן ביותר</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="results-container">
+        <div class="results-header">
+          <span id="resultsCount">0 תוצאות נמצאו</span>
+          <div class="view-options">
+            <button class="view-btn active" data-view="grid">
+              <i class="fas fa-th-large"></i>
+            </button>
+            <button class="view-btn" data-view="list">
+              <i class="fas fa-list"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="results-grid" id="resultsGrid">
+
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="header.js"></script>
+    <script type="module" src="footer.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="organizations.js"></script>
+  </body>
+</html>

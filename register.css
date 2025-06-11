@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Main Container Styles */
+.register-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Form Container Styles */
+.form-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 3rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Header Styles */
+h2 {
+  color: #2e7d32;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.subtitle {
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Form Styles */
+#registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Group Styles */
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+/* Default icon position (for name fields) */
+.input-group i.fa-user {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4caf50;
+}
+
+/* Position for email and phone icons */
+.input-group i.fa-envelope,
+.input-group i.fa-phone {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4caf50;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid #e8f5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background: #f9f9f9;
+}
+
+/* Add RTL support for email and phone inputs */
+.input-group input[type="email"],
+.input-group input[type="tel"] {
+  direction: rtl;
+  text-align: right;
+  padding: 1rem 3rem 1rem 1rem;
+}
+
+/* Adjust padding for password inputs to prevent overlap with eye icon */
+.input-group input[type="password"] {
+  padding: 1rem 3rem 1rem 1rem;
+  direction: rtl;
+  text-align: right;
+}
+
+.input-group input[type="email"]:focus,
+.input-group input[type="tel"]:focus,
+.input-group input[type="password"]:focus {
+  outline: none;
+  border-color: #4caf50;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* Password Toggle Button */
+.toggle-password {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4caf50;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.toggle-password:hover {
+  color: #2e7d32;
+}
+
+/* Terms and Conditions */
+.terms {
+  margin-bottom: 1.5rem;
+}
+
+.terms label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.terms input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #4caf50;
+}
+
+.terms a {
+  color: #4caf50;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.terms a:hover {
+  color: #2e7d32;
+}
+
+/* Submit Button */
+.register-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 1.5rem;
+}
+
+.register-btn:hover {
+  background: #2e7d32;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(46, 125, 50, 0.2);
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background: #e8f5e9;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.divider span {
+  background: white;
+  padding: 0 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Social Login Buttons */
+.social-login {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.google-btn,
+.phone-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  border: 2px solid #e8f5e9;
+  border-radius: 8px;
+  background: white;
+  color: #666;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.google-btn:hover,
+.phone-btn:hover {
+  background: #f9f9f9;
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+.google-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Login Link */
+.login-link {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.login-link a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.login-link a:hover {
+  color: #2e7d32;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 1rem;
+  }
+
+  .form-container {
+    padding: 2rem;
+  }
+
+  .social-login {
+    flex-direction: column;
+  }
+}

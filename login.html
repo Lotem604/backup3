@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>יוזמות - התחברות</title>
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="login-container">
+      <div class="form-container">
+        <h2>ברוכים הבאים!</h2>
+        <p class="subtitle">הזינו את פרטיכם להתחברות</p>
+
+        <!-- Login Form -->
+        <form id="loginForm">
+          <!-- Email Input -->
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" placeholder="אימייל" required />
+          </div>
+
+          <!-- Password Input -->
+          <div class="input-group">
+            <input
+              type="password"
+              id="password"
+              placeholder="סיסמא"
+              required
+            />
+            <i class="fas fa-eye toggle-password"></i>
+          </div>
+
+          <!-- Remember Me and Forgot Password -->
+          <div class="remember-forgot">
+            <label>
+              <input type="checkbox" id="remember" />
+              זכור אותי
+            </label>
+            <a href="#" class="forgot-password">שכחתי סיסמא</a>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="login-btn" id="loginBtn">
+            <span class="btn-text">התחבר</span>
+            <span class="btn-loader" style="display: none">
+              <i class="fas fa-spinner fa-spin"></i>
+            </span>
+          </button>
+
+          <!-- Error Message -->
+          <div
+            id="errorMessage"
+            class="error-message"
+            style="display: none"
+          ></div>
+        </form>
+
+        <!-- Registration Link -->
+        <p class="signup-link">
+          אין לך חשבון? <a href="register.html">הירשם</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Main Application Logic -->
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="header.js"></script>
+    <script type="module" src="footer.js"></script>
+
+    <style>
+      .error-message {
+        color: #dc3545;
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        border-radius: 4px;
+        padding: 10px;
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      .btn-loader {
+        margin-left: 8px;
+      }
+
+      .login-btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+    </style>
+  </body>
+</html>
