@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
   header.innerHTML = `
     <div class="header-container">
         <div class="logo-section">
-            <a href="main.html" class="logo-link">
+            <a href="index.html" class="logo-link">
                 <img src="3b54b96e-6732-4ce6-893f-cdcd8effafda-removebg-preview.png" alt="התקווה 8" class="logo-image">
             </a>
         </div>
         <nav class="nav-links">
-            <a href="main.html">דף הבית</a>
+            <a href="index.html">דף הבית</a>
             <a href="initiatives.html">יוזמות</a>
             <a href="organizations.html">שותפים</a>
             <a href="hazon.html">החזון שלנו</a>
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
         logoutBtn.addEventListener("click", async () => {
           try {
             await auth.signOut();
-            window.location.href = "main.html";
+            window.location.href = "index.html";
           } catch (error) {
             console.error("Logout error:", error);
           }

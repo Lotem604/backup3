@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     logoutBtn.addEventListener('click', async () => {
       try {
         await logoutUser();
-        window.location.href = 'main.html';
+        window.location.href = 'index.html';
       } catch (error) {
         console.error('Error logging out:', error);
         alert('שגיאה בהתנתקות. אנא נסה שוב.');
