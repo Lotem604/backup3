@@ -1,5 +1,5 @@
 // Import Firebase functions and services
-// יש לוודא ש-auth אכן מיוצא כראוי מתוך firebase-config.js
+
 import {
   auth,
   db,
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     logoutBtn.addEventListener('click', async () => {
       try {
         await logoutUser();
-        window.location.href = 'index.html';
+        window.location.href = 'main.html';
       } catch (error) {
         console.error('Error logging out:', error);
         alert('Error logging out. Please try again.');
