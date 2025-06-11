@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
   header.innerHTML = `
     <div class="header-container">
         <div class="logo-section">
-            <a href="index.html" class="logo-link">
+            <a href="main.html" class="logo-link">
                 <img src="3b54b96e-6732-4ce6-893f-cdcd8effafda-removebg-preview.png" alt="התקווה 8" class="logo-image">
             </a>
         </div>
         <nav class="nav-links">
-            <a href="index.html">דף הבית</a>
+            <a href="main.html">דף הבית</a>
             <a href="initiatives.html">יוזמות</a>
             <a href="organizations.html">שותפים</a>
             <a href="hazon.html">החזון שלנו</a>
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
         logoutBtn.addEventListener("click", async () => {
           try {
             await auth.signOut();
-            window.location.href = "index.html";
+            window.location.href = "main.html";
           } catch (error) {
             console.error("Logout error:", error);
           }
@@ -360,26 +360,62 @@ document.addEventListener("DOMContentLoaded", function () {
  
          @media (max-width: 768px) {
              header {
-                 height: 50px;
+                 height: auto;
+                 padding: 10px 0;
              }
  
              body {
-                 padding-top: 50px;
+                 padding-top: 60px;
              }
  
-             .logo-image {
-                 height: 100%;
-                 width: auto;
+             .header-container {
+                 flex-direction: column;
+                 gap: 10px;
+                 padding: 0 15px;
+             }
+ 
+             .logo-section {
+                 width: 100%;
+                 justify-content: center;
+             }
+ 
+             .logo-link {
+                 height: 80px;
+                 width: 80px;
+             }
+ 
+             .nav-links {
+                 width: 100%;
+                 justify-content: center;
+                 flex-wrap: wrap;
+                 gap: 15px;
+                 padding: 5px 0;
+             }
+ 
+             .nav-links a {
+                 font-size: 1rem;
+                 padding: 5px 10px;
+             }
+ 
+             .auth-buttons {
+                 width: 100%;
+                 justify-content: center;
+                 gap: 15px;
+             }
+ 
+             .login-button, .register-button {
+                 padding: 8px 20px;
+                 font-size: 1rem;
              }
  
              .profile-icon {
-                 width: 32px;
-                 height: 32px;
+                 width: 35px;
+                 height: 35px;
              }
  
              .dropdown-menu {
                  position: fixed;
-                 top: 50px;
+                 top: 60px;
                  right: 0;
                  left: 0;
                  width: 100%;
@@ -408,13 +444,45 @@ document.addEventListener("DOMContentLoaded", function () {
          }
  
          @media (max-width: 480px) {
+             header {
+                 padding: 8px 0;
+             }
+ 
+             .header-container {
+                 gap: 8px;
+                 padding: 0 10px;
+             }
+ 
+             .logo-link {
+                 height: 60px;
+                 width: 60px;
+             }
+ 
+             .nav-links {
+                 gap: 10px;
+             }
+ 
+             .nav-links a {
+                 font-size: 0.9rem;
+                 padding: 4px 8px;
+             }
+ 
+             .auth-buttons {
+                 gap: 10px;
+             }
+ 
+             .login-button, .register-button {
+                 padding: 6px 15px;
+                 font-size: 0.9rem;
+             }
+ 
              .dropdown-menu {
-                 top: 45px;
+                 top: 55px;
              }
  
              .dropdown-item {
-                 font-size: 1rem;
-                 padding: 12px 20px;
+                 font-size: 0.9rem;
+                 padding: 12px 15px;
              }
          }
      `;
